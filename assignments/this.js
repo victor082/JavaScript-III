@@ -38,7 +38,6 @@ function PokemonAbilitys() {
     this.attack = 'attack!',
     this.fight = function() {
         console.log(`${this.go}, ${this.attack}`);
-        console.log(this);
     }
 
 }
@@ -58,6 +57,6 @@ const squirtle = {
 function infoSquirtle(move1, move2, move3, move4) {
     return `This is ${this.name} and knows ${move1}, ${move2}, ${move3}, ${move4}`;
 }
-const move = ["Tackle", "Bubble", "Water Gun", "Tail Whip"];
+const moves = ["Tackle", "Bubble", "Water Gun", "Tail Whip"];
 
-console.log(infoSquirtle.apply(squirtle, move));
+console.log(infoSquirtle.apply(squirtle, moves));
