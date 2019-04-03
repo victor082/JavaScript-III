@@ -34,6 +34,7 @@ function CharacterStats(status) {
   GameObject.call(this, status);
   this.newhealthPoints = status.healthPoints;
 }
+CharacterStats.prototype = Object.create(GameObject);
 CharacterStats.prototype.takeDamage = function() {
   return `${this.newName} took damage.`;
 }
@@ -53,7 +54,7 @@ CharacterStats.prototype.takeDamage = function() {
  }
  Humanoid.prototype = Object.create(GameObject.prototype);
  Humanoid.prototype = Object.create(CharacterStats.prototype);
- Humanoid.prototype.greet = function() {return `${this.name} offers a greeting in ${this.language}`;};
+ Humanoid.prototype.greet = function() {return `${this.name} offers a greeting in ${this.language}`};
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
   * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
