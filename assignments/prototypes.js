@@ -15,14 +15,14 @@ Each constructor function has unique properties and methods that are defined in 
   * dimensions (These represent the character's size in the video game)
   * destroy() // prototype method -> returns the string 'GameObject was removed from the game.' 
 */
-function GameObject(info) {
-  this.createdAt = info.createdAt;
-  this.dimensions = info.dimensions;
-  this.name = info.name;
-}
+function GameObject(info) { // Creates the GameObject constructor function that has the property of createdAt, dimensions, and name. Passes the parameter 'info'
+  this.createdAt = info.createdAt; // assign the createdAt property to the new info.createdAt value
+  this.dimensions = info.dimensions; // assign the dimensions property to the new info.dimensions value
+  this.name = info.name; // assign the name property to the new info.name value
+} // the keyword 'this' refers to one object, ie 'GameObject'. 'This' keyword does not have a value, used as a substitute for the new object(mage, swordsman, archer)
 
-GameObject.prototype.destroy = function () {
-  return `${this.name} was removed from the game.`;
+GameObject.prototype.destroy = function () { // Creating a new destroy method
+  return `${this.name} was removed from the game.`; // destroy method returns a statement
 };
 
 /*
@@ -34,7 +34,7 @@ GameObject.prototype.destroy = function () {
 */
 
 function CharacterStats(charStats) {
-  GameObject.call(this, charStats);
+  GameObject.call(this, charStats); //Calls the GameObject object and it's this and charStats arguments.
   this.healthPoints = charStats.healthPoints;
 }
 
@@ -128,16 +128,16 @@ const archer = new Humanoid({
   language: 'Elvish',
 });
 
-console.log(mage.createdAt); // Today's date
-console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
-console.log(swordsman.healthPoints); // 15
-console.log(mage.name); // Bruce
-console.log(swordsman.team); // The Round Table
-console.log(mage.weapons); // Staff of Shamalama
-console.log(archer.language); // Elvish
-console.log(archer.greet()); // Lilith offers a greeting in Elvish.
-console.log(mage.takeDamage()); // Bruce took damage.
-console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
+// console.log(mage.createdAt); // Today's date
+// console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
+// console.log(swordsman.healthPoints); // 15
+// console.log(mage.name); // Bruce
+// console.log(swordsman.team); // The Round Table
+// console.log(mage.weapons); // Staff of Shamalama
+// console.log(archer.language); // Elvish
+// console.log(archer.greet()); // Lilith offers a greeting in Elvish.
+// console.log(mage.takeDamage()); // Bruce took damage.
+// console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
 
 // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
